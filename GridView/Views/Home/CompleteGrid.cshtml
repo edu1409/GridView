@@ -1,0 +1,60 @@
+﻿@model CompleteGridViewModel
+
+<div class="container">
+
+    <partial name="_Searcher" model="Model" />
+
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <a asp-action="@Model.Action"
+                       asp-route-sort="@nameof(ProductViewModel.Product)"
+                       asp-route-asc="@(Model.SortField == nameof(ProductViewModel.Product) ? !Model.SortAscending : true)"
+                       asp-route-filter="@Model.CurrentFilter"
+                       asp-route-page="@(((PaginatedList<IGridViewItem>)Model.List).CurrentPage)">
+                        @nameof(ProductViewModel.Product)
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="@Model.Action"
+                       asp-route-sort="@nameof(ProductViewModel.Category)"
+                       asp-route-asc="@(Model.SortField == nameof(ProductViewModel.Category) ? !Model.SortAscending : true)"
+                       asp-route-filter="@Model.CurrentFilter"
+                       asp-route-page="@(((PaginatedList<IGridViewItem>)Model.List).CurrentPage)">
+                        @nameof(ProductViewModel.Category)
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="@Model.Action"
+                       asp-route-sort="@nameof(ProductViewModel.Price)"
+                       asp-route-asc="@(Model.SortField == nameof(ProductViewModel.Price) ? !Model.SortAscending : true)"
+                       asp-route-filter="@Model.CurrentFilter"
+                       asp-route-page="@(((PaginatedList<IGridViewItem>)Model.List).CurrentPage)">
+                        @nameof(ProductViewModel.Price)
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductViewModel product in Model.List)
+            {
+                <tr>
+                    <td>@product.Product</td>
+                    <td>@product.Category</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <partial name="_Paginator2" model="Model" />
+
+    <br />
+    <div class="row">
+        <form method="post">
+            <button asp-controller="Home" asp-action="Index" class="btn btn-primary">Back</button>
+        </form>
+    </div>
+</div>

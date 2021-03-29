@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GridView.Models.Classes.GridViewListBase&lt;TGridViewItem&gt;" Collapsed="true">
+    <Position X="7" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Classes\GridViewListBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GridView.Models.Classes.PaginatedList&lt;TGridViewItem&gt;">
+    <Position X="5.5" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAUAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\Classes\PaginatedList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GridView.Models.Classes.SearchableList&lt;TGridViewItem&gt;" Collapsed="true">
+    <Position X="8.75" Y="7" Width="2.5" />
+    <InheritanceLine Type="GridView.Models.Classes.GridViewListBase&lt;TGridViewItem&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="8.25" Y="6.441" />
+        <Point X="8.25" Y="6.7" />
+        <Point X="10" Y="6.7" />
+        <Point X="10" Y="7" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Classes\SearchableList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GridView.Models.CompleteGridViewModel" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAA4=</HashCode>
+      <FileName>Models\CompleteGridViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GridView.Models.PaginableGridViewModel" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY=</HashCode>
+      <FileName>Models\PaginableGridViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GridView.Models.ProductViewModel" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\ProductViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GridView.Models.SearchableGridViewModel" BaseTypeListCollapsed="true">
+    <Position X="14" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAA4=</HashCode>
+      <FileName>Models\SearchableGridViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="GridView.Models.Interfaces.IGridView&lt;TGridViewItem&gt;">
+    <Position X="2.5" Y="4.5" Width="2.75" />
+    <InheritanceLine Type="GridView.Models.Interfaces.IGridViewSearchable&lt;TGridViewItem&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.688" Y="3.867" />
+        <Point X="6.688" Y="4.125" />
+        <Point X="3.938" Y="4.125" />
+        <Point X="3.938" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="GridView.Models.Interfaces.IGridViewPaginable&lt;TGridViewItem&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.938" Y="3.247" />
+        <Point X="1.938" Y="4.125" />
+        <Point X="3.938" Y="4.125" />
+        <Point X="3.938" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\Interfaces\IGridView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GridView.Models.Interfaces.IGridViewAction">
+    <Position X="2.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Interfaces\IGridViewAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GridView.Models.Interfaces.IGridViewItem" Collapsed="true">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Interfaces\IGridViewItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GridView.Models.Interfaces.IGridViewPaginable&lt;TGridViewItem&gt;">
+    <Position X="0.5" Y="2.25" Width="2.75" />
+    <InheritanceLine Type="GridView.Models.Interfaces.IGridViewAction" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.188" Y="1.603" />
+        <Point X="4.188" Y="1.987" />
+        <Point X="1.938" Y="1.987" />
+        <Point X="1.938" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="List" Type="GridView.Models.Classes.GridViewListBase&lt;TGridViewItem&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.875" Y="3.247" />
+        <Point X="0.875" Y="6.062" />
+        <Point X="7" Y="6.062" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="5.693" Y="2.885" Height="0.162" Width="0.612" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\Interfaces\IGridViewPaginable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="List" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="GridView.Models.Interfaces.IGridViewSearchable&lt;TGridViewItem&gt;">
+    <Position X="5.25" Y="2.25" Width="2.75" />
+    <InheritanceLine Type="GridView.Models.Interfaces.IGridViewAction" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.188" Y="1.603" />
+        <Point X="4.188" Y="1.987" />
+        <Point X="6.688" Y="1.987" />
+        <Point X="6.688" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="List" Type="GridView.Models.Classes.GridViewListBase&lt;TGridViewItem&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="3.687" />
+        <Point X="8.25" Y="3.687" />
+        <Point X="8.25" Y="5.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.418" Y="1.985" Height="0.162" Width="0.537" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAo=</HashCode>
+      <FileName>Models\Interfaces\IGridViewSearchable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="List" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,38 @@
+﻿@model PaginableGridViewModel
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @nameof(ProductViewModel.Product)
+                </th>
+                <th>
+                    @nameof(ProductViewModel.Category)
+                </th>
+                <th>
+                    @nameof(ProductViewModel.Price)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductViewModel product in Model.List)
+            {
+                <tr>
+                    <td>@product.Product</td>
+                    <td>@product.Category</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <partial name="_Paginator1" model="Model" />
+
+    <br />
+    <div class="row">
+        <form method="post">
+            <button asp-controller="Home" asp-action="Index" class="btn btn-primary">Back</button>
+        </form>
+    </div>
+</div>

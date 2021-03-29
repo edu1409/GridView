@@ -1,0 +1,8 @@
+﻿@model IGridViewSearchable<IGridViewItem>
+
+<div class="row">
+    <form asp-action="@Model.Action" method="get">
+        Produto ou Categoria: <input type="text" name="search" value="@Model.CurrentFilter" />
+        <input type="submit" value="Pesquisar" class="btn btn-primary" /> | <a asp-action="@Model.Action">All Products</a>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+﻿@model IGridViewPaginable<IGridViewItem>
+
+@{
+    PaginatedList<IGridViewItem> paginatorList = ((PaginatedList<IGridViewItem>)Model.List);
+}
+
+<div class="row">
+    <a asp-action="@Model.Action"
+       asp-route-page="1"
+       class="btn btn-default @(paginatorList.CurrentPage == 1 ? "disabled" : "")">
+        &lt;&lt;
+    </a>
+    <a asp-action="@Model.Action"
+       asp-route-page="@(paginatorList.CurrentPage - 1)"
+       class="btn btn-default @(!paginatorList.HasPreviousPage ? "disabled" : "")">
+        &lt;
+    </a>
+    <span class="btn btn-default">@($"{paginatorList.CurrentPage}/{paginatorList.PageCount}")</span>
+    <a asp-action="@Model.Action"
+       asp-route-page="@(paginatorList.CurrentPage + 1)"
+       class="btn btn-default @(!paginatorList.HasNextPage ? "disabled" : "")">
+        &gt;
+    </a>
+    <a asp-action="@Model.Action"
+       asp-route-page="@(paginatorList.PageCount)"
+       class="btn btn-default @(paginatorList.CurrentPage == paginatorList.PageCount ? "disabled" : "")">
+        &gt;&gt;
+    </a>
+</div>
